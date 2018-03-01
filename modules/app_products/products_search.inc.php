@@ -419,14 +419,16 @@
     }
 
 
-     if ($res[$i]['CATEGORY_ID']!=$old_category_id) {
+    if ($res[$i]['CATEGORY_ID']!=$old_category_id) {
       $old_category_id=$res[$i]['CATEGORY_ID'];
       $res[$i]['NEW_CATEGORY']=1;
-     }
+    }
+	 
     if ($out['SHOPPING']) {
      if ($res[$i]['IN_CART']!=$incart) {
-      $res[$i]['CATEGORY_TITLE']='В карзине:<br/>'.$res[$i]['CATEGORY_TITLE'];
+      $res[$i]['CATEGORY_TITLE']='<br><br><hr><span style="color:red;">В карзине:</span><br/>'.$res[$i]['CATEGORY_TITLE'];
       $incart=$res[$i]['IN_CART'];
+	  $res[$i]['NEW_CATEGORY']=1;
      }
     }
     
