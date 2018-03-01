@@ -29,7 +29,7 @@
   }
 
   if ($op=='incart') {
-   SQLExec("UPDATE products SET QTY=QTY+1 WHERE ID='".(int)$id."'");
+   //SQLExec("UPDATE products SET QTY=QTY+1 WHERE ID='".(int)$id."'");
    SQLExec("UPDATE shopping_list_items SET IN_CART=1 WHERE PRODUCT_ID='".(int)$id."'");
    echo "OK";
    $rec=SQLSelectOne("SELECT * FROM products WHERE ID='".(int)$id."'");
@@ -37,7 +37,7 @@
   }
 
   if ($op=='notincart') {
-   SQLExec("UPDATE products SET QTY=QTY-1 WHERE ID='".(int)$id."'");
+   //SQLExec("UPDATE products SET QTY=QTY-1 WHERE ID='".(int)$id."'");
    SQLExec("UPDATE shopping_list_items SET IN_CART=0 WHERE PRODUCT_ID='".(int)$id."'");
    echo "OK";
   }
